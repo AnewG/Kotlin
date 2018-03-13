@@ -1,4 +1,5 @@
 # Java
+
 sth about java
 
 ## Java Tutorials
@@ -10,16 +11,32 @@ sth about java
 ## Structure of a java class
 
 ```
-package packageName;
-import ClassNameToImport; 
+package orgType.orgName.appName.compName;
+/*
+  orgType  is the organization type, such as com, org, or net.
+  orgName  is the name of the organization's domain, such as makotojava, oracle, or ibm.
+  appName  is the name of the application, abbreviated.
+  compName is the name of the component.
+*/
+
+import com.makotojava.*;
+
 accessSpecifier class ClassName {
+
   accessSpecifier dataType variableName [= initialValue];
+  /*
+    private String name;
+    private int age;
+  */
+  
   accessSpecifier ClassName([argumentList]) {
     constructorStatement(s)
   }
+  
   accessSpecifier returnType methodName ([argumentList]) {
     methodStatement(s)
   }
+  
   // This is a comment
   /* This is a comment too */
   /* This is a
