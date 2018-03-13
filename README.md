@@ -8,6 +8,8 @@ sth about java
 
 [Introduction to Java programming, Part 2](https://www.ibm.com/developerworks/java/tutorials/j-introtojava2/index.html)
 
+[Android studio run standard Java projects](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)
+
 ## Structure of a java class
 
 ```
