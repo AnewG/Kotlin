@@ -40,6 +40,10 @@ accessSpecifier class ClassName {
   accessSpecifier returnType methodName ([argumentList]) {
     methodStatement(s)
   }
+  /*
+  public String getName() { return name; }
+  public void setName(String value) { name = value; }
+  */
   
   // This is a comment
   /* This is a comment too */
