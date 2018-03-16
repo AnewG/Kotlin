@@ -58,7 +58,13 @@ accessSpecifier class ClassName {
   }
   public void someOtherMethod() {
     someLocalVariable = "Hello there";// That variable is out of scope!
- 
+    int[] integers = new int[5];
+    int[] integers2 = new int[] { 1, 2, 3, 4, 5 };
+    int[] integers3 = { 1, 2, 3, 4, 5 };
+    int[] integers4 = new int[5];
+    for (int aa = 0; aa < integers.length; aa++) {
+      integers4[aa] = aa+1;
+    }
   }
   
   // This is a comment
