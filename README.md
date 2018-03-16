@@ -45,6 +45,22 @@ accessSpecifier class ClassName {
   public void setName(String value) { name = value; }
   */
   
+  private String someClassVariable;
+  public void someMethod(String someParameter) {
+    String someLocalVariable = "Hello";
+ 
+    if (true) {
+      String someOtherLocalVariable = "Howdy";
+    }
+    someClassVariable = someParameter; // legal
+    someLocalVariable = someClassVariable; // also legal
+    someOtherLocalVariable = someLocalVariable;// Variable out of scope!
+  }
+  public void someOtherMethod() {
+    someLocalVariable = "Hello there";// That variable is out of scope!
+ 
+  }
+  
   // This is a comment
   /* This is a comment too */
   /* This is a
