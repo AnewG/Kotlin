@@ -28,7 +28,7 @@ import com.makotojava.*;
 accessSpecifier class ClassName extends Xxx {
 
   // private String name;
-  accessSpecifier dataType variableName [= initialValue];
+  accessSpecifier static final dataType variableName [= initialValue];
 
   accessSpecifier ClassName([argumentList]) {
     constructorStatement(s)
