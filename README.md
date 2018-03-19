@@ -105,6 +105,20 @@ accessSpecifier class ClassName {
 }
 ```
 
+## Overload
+
+```
+public void printAudit(StringBuilder buffer) {
+   buffer.append("Name=");
+}
+ 
+public void printAudit(Logger l) {
+   StringBuilder sb = new StringBuilder();
+   printAudit(sb);
+   l.info(sb.toString());
+}
+```
+
 ## JAR
 
 ```
