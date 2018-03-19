@@ -163,6 +163,8 @@ public static void main(String[] args) {
   Manager manager = new Manager();
   Manager.DirectReports dr = manager.new DirectReports();
 }
+
+ref: https://www.jianshu.com/p/b7f9c806b3aa
 ```
 
 ## Overload
