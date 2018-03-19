@@ -25,7 +25,7 @@ package orgType.orgName.appName.compName;
 
 import com.makotojava.*;
 
-accessSpecifier class ClassName {
+accessSpecifier class ClassName extends Xxx {
 
   // private String name;
   accessSpecifier dataType variableName [= initialValue];
@@ -97,6 +97,7 @@ accessSpecifier class ClassName {
     setOfIntegers.add(Integer.valueOf(10));
   }
   // Maps
+  @Override
   public void mapsMethod(){
     Map<String, Integer> mapOfIntegers = new HashMap<>();
     mapOfIntegers.put("1", Integer.valueOf(1));
