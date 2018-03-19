@@ -146,6 +146,25 @@ public class Manager extends Employee implements BonusEligible, StockOptionRecip
 }
 ```
 
+## nested class
+
+```
+public class Manager extends Employee {
+  public Manager() {
+  }
+  . . .
+  public class DirectReports {
+  . . .
+  }
+}
+
+// Meanwhile, in another method somewhere...
+public static void main(String[] args) {
+  Manager manager = new Manager();
+  Manager.DirectReports dr = manager.new DirectReports();
+}
+```
+
 ## Overload
 
 ```
