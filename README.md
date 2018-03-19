@@ -12,6 +12,8 @@ sth about java
 
 [Android studio run standard Java projects](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)
 
+android_book: 9787115439789
+
 ## Structure of a java class
 
 ```
