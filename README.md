@@ -187,3 +187,70 @@ public void printAudit(Logger l) {
 src/...
 lib/xxx.jar (Add to Build Path)
 ```
+
+## Generics
+
+```
+ArrayList is Generics:
+  ArrayList<String> strList = new ArrayList<String>();  
+  ArrayList<Integer> intList = new ArrayList<Integer>();  
+  ArrayList<Double> doubleList = new ArrayList<Double>();  
+  
+-------------------------
+
+class Point<T>{   
+    private T x ;        
+    private T y ;        
+    public void setX(T x){
+        this.x = x ;  
+    }  
+    public void setY(T y){  
+        this.y = y ;  
+    }  
+    public T getX(){
+        return this.x ;  
+    }  
+    public T getY(){  
+        return this.y ;  
+    }  
+};  
+Point<Integer> p = new Point<Integer>() ;   
+p.setX(new Integer(100)) ;   
+System.out.println(p.getX());    
+
+Point<Float> p = new Point<Float>() ;   
+p.setX(new Float(100.12f)) ;   
+System.out.println(p.getX());  
+
+-------------------------
+
+class MorePoint<T,U> {  
+    private T x;  
+    private T y;         
+    private U name;  
+    public void setX(T x) {  
+        this.x = x;  
+    }  
+    public T getX() {  
+        return this.x;  
+    }  
+    public void setName(U name){  
+        this.name = name;  
+    }  
+    public U getName() {  
+        return this.name;  
+    }  
+}
+MorePoint<Integer,String> morePoint = new MorePoint<Integer, String>();  
+morePoint.setName("harvic");  
+Log.d(TAG, "morPont.getName:" + morePoint.getName());  
+
+-------------------------
+
+interface Info<T>{    
+    public T getVar();  
+    public void setVar(T x);  
+}    
+
+http://blog.csdn.net/qq_27093465/article/details/73229016
+```
