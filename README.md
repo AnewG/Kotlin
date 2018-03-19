@@ -181,6 +181,25 @@ public void printAudit(Logger l) {
 }
 ```
 
+## enum
+
+```
+public enum Gender {
+  MALE("male"),
+  FEMALE("female"),
+  OTHER("other");
+ 
+  private String displayName;
+  private Gender(String displayName) {
+    this.displayName = displayName;
+  }
+ 
+  public String getDisplayName() {
+    return this.displayName;
+  }
+}
+```
+
 ## JAR
 
 ```
