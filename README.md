@@ -135,6 +135,17 @@ public abstract class Employee
 }
 ```
 
+## interface
+
+```
+public interface InterfaceName {
+  returnType methodName(argumentList);
+}
+public class Manager extends Employee implements BonusEligible, StockOptionRecipient {
+  // And so on
+}
+```
+
 ## Overload
 
 ```
