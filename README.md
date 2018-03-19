@@ -103,6 +103,20 @@ accessSpecifier class ClassName extends Xxx {
     mapOfIntegers.put("1", Integer.valueOf(1));
     mapOfIntegers.get("1")
   }
+  
+  // try-with-resource
+  public void exceptionTestTryWithResources() {
+    Logger l = Logger.getLogger(Employee.class.getName());
+    File file = new File("file.txt");
+    try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+      String line = bufferedReader.readLine();
+      while (line != null) {
+        // Read the file
+      }
+    } catch (Exception e) {
+      l.severe(e.getMessage());
+    }
+  }
 }
 ```
 
