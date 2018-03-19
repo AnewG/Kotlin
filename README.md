@@ -32,6 +32,7 @@ accessSpecifier class ClassName {
 
   accessSpecifier ClassName([argumentList]) {
     constructorStatement(s)
+    System.out.println("Telling you all about it:");
   }
   
   /*
@@ -102,4 +103,11 @@ accessSpecifier class ClassName {
     mapOfIntegers.get("1")
   }
 }
+```
+
+## JAR
+
+```
+src/...
+lib/xxx.jar (Add to Build Path)
 ```
