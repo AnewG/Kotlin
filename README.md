@@ -15,47 +15,61 @@ sth about java
 ## Structure of a java class
 
 ```
-package orgType.orgName.appName.compName;
 /*
   orgType  is the organization type, such as com, org, or net.
   orgName  is the name of the organization's domain, such as makotojava, oracle, or ibm.
   appName  is the name of the application, abbreviated.
   compName is the name of the component.
 */
+package orgType.orgName.appName.compName;
 
 import com.makotojava.*;
 
 accessSpecifier class ClassName {
 
+  // private String name;
   accessSpecifier dataType variableName [= initialValue];
-  /*
-    private String name;
-    private int age;
-  */
-  
+
   accessSpecifier ClassName([argumentList]) {
     constructorStatement(s)
   }
   
+  /*
+    public String getName() { return name; }
+    public void setName(String value) { name = value; }
+  */
   accessSpecifier returnType methodName ([argumentList]) {
     methodStatement(s)
   }
-  /*
-  public String getName() { return name; }
-  public void setName(String value) { name = value; }
-  */
   
+  // type
+  public void typeMethod(){
+    // boxing
+    int value = 238;
+    Integer boxedValue = Integer.valueOf(value);
+    // unbox
+    Integer boxedValue = Integer.valueOf(238);
+    int intValue = boxedValue.intValue();
+    // auto
+    int intValue = 238;
+    Integer boxedValue = intValue;
+    intValue = boxedValue;
+  }
+  
+  // scope
   private String someClassVariable;
   public void someMethod(String someParameter) {
     String someLocalVariable = "Hello";
- 
     if (true) {
       String someOtherLocalVariable = "Howdy";
     }
-    someClassVariable = someParameter; // legal
-    someLocalVariable = someClassVariable; // also legal
-    someOtherLocalVariable = someLocalVariable;// Variable out of scope!
+    someClassVariable = someParameter;          // legal
+    someLocalVariable = someClassVariable;      // also legal
+    someOtherLocalVariable = someLocalVariable; // Variable out of scope!
   }
+  
+  // collections
+  // array
   public void someOtherMethod() {
     someLocalVariable = "Hello there";// That variable is out of scope!
     int[] integers = new int[5];
@@ -65,12 +79,27 @@ accessSpecifier class ClassName {
     for (int aa = 0; aa < integers.length; aa++) {
       integers4[aa] = aa+1;
     }
+    for (int i : integers) {
+      // i
+    }
   }
-  
-  // This is a comment
-  /* This is a comment too */
-  /* This is a
-     multiline
-     comment */
+  // list
+  public void listMethod(){
+    List<Integer> listOfIntegers = new ArrayList<>();
+    listOfIntegers.add(Integer.valueOf(238));
+    listOfIntegers.size()
+    listOfIntegers.get(0)
+  }
+  // sets
+  public void setsMethod(){
+    Set<Integer> setOfIntegers = new HashSet<Integer>();
+    setOfIntegers.add(Integer.valueOf(10));
+  }
+  // Maps
+  public void mapsMethod(){
+    Map<String, Integer> mapOfIntegers = new HashMap<>();
+    mapOfIntegers.put("1", Integer.valueOf(1));
+    mapOfIntegers.get("1")
+  }
 }
 ```
