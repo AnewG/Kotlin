@@ -23,6 +23,7 @@
           android:text="Button 1" 
         />
     Widget             控件
+        ViewGroup --> View
 ```
 
 ```
