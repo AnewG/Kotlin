@@ -15,7 +15,8 @@
 
 ```
     Layout             布局（V：视图）
-        <Button 
+        LinearLayout, RelativeLayout, FrameLayout, PercentXX
+        <Button 
           android:id="@+id/button_1" 
           android:layout_width="match_parent" 
           android:layout_height="wrap_content" 
