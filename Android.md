@@ -1,6 +1,7 @@
 ```
     Activity           活动（C：逻辑）
         Intent - 隐式/显式
+        Bundle
         Back Stack (LIFO)
         通过 AndroidManifest.xml 配置各活动属性
 ```
