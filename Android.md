@@ -2,6 +2,7 @@
     Activity           活动（C：逻辑）
         Intent - 隐式/显式
         Back Stack (LIFO)
+        通过 AndroidManifest.xml 配置各活动属性
 ```
 
 ![lifecycle](https://developer.android.com/guide/components/images/activity_lifecycle.png)
