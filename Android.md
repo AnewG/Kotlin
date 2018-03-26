@@ -1,7 +1,8 @@
 ```
 4组件
     Activity           活动（C：逻辑）
-    
+        Intent - 隐式/显式
+       
     Layout             布局（V：视图）
         <Button 
           android:id="@+id/button_1" 
