@@ -22,6 +22,7 @@
           android:layout_height="wrap_content" 
           android:text="Button 1" 
         />
+    Widget             控件
 ```
 
 ```
