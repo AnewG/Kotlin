@@ -22,8 +22,8 @@
           android:layout_height="wrap_content" 
           android:text="Button 1" 
         />
-    Widget             控件
-        ViewGroup --> View
+    Widget             控件 (逻辑+视图组合)
+        ViewGroup --> View
 ```
 
 ```
