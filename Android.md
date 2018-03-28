@@ -28,6 +28,16 @@
 
 ```
     ListView
+    public class XxxAdapter extends ArrayAdapter<Xxx> {
+    	public XxxAdapter(Context context, int textViewResourceId, List<Xxx> objects){ 
+    		super(context, textViewResourceId, objects);
+    	}
+    
+    	@Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            
+        }
+    }
 ```
 
 ```
