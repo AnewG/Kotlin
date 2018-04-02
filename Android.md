@@ -1,5 +1,5 @@
 ```
-    Activity           活动（C：逻辑）
+    Activity           活动（C：逻辑）更小范围的：碎片 Fragment
         Intent - 隐式/显式
         Bundle
         Back Stack (LIFO) --> Task
