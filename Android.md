@@ -67,5 +67,5 @@
 
 ```
     Broadcast Receiver 广播接收器
-    APP内部监听与通知
+    APP内部监听与通知，或手机系统广播
 ```
