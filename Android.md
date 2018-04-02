@@ -39,8 +39,8 @@
         }
     }
     
-    RecyclerView
-    public class xxxAdapter extends RecyclerView.Adapter<xxxAdapter.ViewHolder> {
+    RecyclerView 新增横向和瀑布流布局
+    public class xxxAdapter extends RecyclerView.Adapter<xxxAdapter.ViewHolder> {
     	static class ViewHolder extends RecyclerView.ViewHolder{
     		public ViewHolder(View view){
     			super(view)
