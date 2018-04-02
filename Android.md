@@ -38,6 +38,19 @@
             
         }
     }
+    
+    RecyclerView
+    public class xxxAdapter extends RecyclerView.Adapter<xxxAdapter.ViewHolder> {
+    	static class ViewHolder extends RecyclerView.ViewHolder{
+    		public ViewHolder(View view){
+    			super(view)
+    		}
+    	}
+    
+    	public xxxAdapter(List<xxx> xxxList){ 
+    
+    	}
+    }
 ```
 
 ```
