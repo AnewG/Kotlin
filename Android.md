@@ -58,10 +58,6 @@
 ```
 
 ```
-    Service            服务
-```
-
-```
     Content Provider   内容提供者
         跨程序共享数据(比如读取系统联系人)
             ContentResolver 
@@ -72,7 +68,7 @@
 
 ```
     Broadcast Receiver 广播接收器
-        APP内部监听与通知，或手机系统广播
+        APP内部监听与通知(Notification)，或手机系统自身广播(已开机，网络状态）
         分标准广播与有序广播（链式处理）
 ```
 
