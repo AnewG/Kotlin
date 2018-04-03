@@ -63,7 +63,9 @@
 
 ```
     Content Provider   内容提供者
-        跨程序共享数据
+        跨程序共享数据(比如读取系统联系人)
+            ContentResolver 
+                content://io.llo.xxx.provider/table1
         权限管理：
             危险权限(组) + 普通权限 + 动态检查与申请
 ```
