@@ -62,6 +62,7 @@
         跨程序共享数据(比如读取系统联系人)
             ContentResolver 
                 content://io.llo.xxx.provider/table1
+                或访问拍照或截屏保存到 /data 目录下的数据
         权限管理：
             危险权限(组) + 普通权限 + 动态检查与申请
 ```
