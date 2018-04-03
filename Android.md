@@ -73,4 +73,8 @@
 
 ```
     Storage 持久化
+        文件存储
+        SharedPreferences (KV store)
+        SQLite (use adb check file)
+        LitePal (ORM)
 ```
