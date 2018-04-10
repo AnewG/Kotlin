@@ -114,4 +114,6 @@
         		// logic code
         	}
         }).start()
+    主线程更新UI (handlerMessage) --- 子线程完成耗时任务通知主线程 (handlerSendMessage add to MessageQueue)
+    Looper dispatch to handlerMessage
 ```
