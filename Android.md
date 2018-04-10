@@ -85,4 +85,33 @@
 
 ```
     安卓多线程
+        method1:
+        
+        class MyThread extends Thread{
+        	@Override
+        	public void run(){ 
+        		// logic code
+        	}
+        }
+        new MyThread().start();  // will run in other thread
+        
+        method2:
+        
+        class MyThread implements Runnable{ 
+        	@Override
+        	public void run(){ 
+        		// logic code
+        	}
+        }
+        MyThread myThread = new MyThread();
+        new Thread(myThread).start();
+        
+        method3:
+        
+        new Thread(new Runnable(){
+        	@Override
+        	public void run(){ 
+        		// logic code
+        	}
+        }).start()
 ```
