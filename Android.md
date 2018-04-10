@@ -124,8 +124,8 @@
 ```
 
 ```
-    Service
-        public class MyService extends Service{
+    Service：并不默认在子线程运行。能够关闭自己。IntentService
+        public class MyService extends Service{
         	public MyService(){ 
         
         	}
