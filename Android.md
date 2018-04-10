@@ -116,4 +116,44 @@
         }).start()
     主线程更新UI (handlerMessage) --- 子线程完成耗时任务通知主线程 (handlerSendMessage add to MessageQueue)
     Looper dispatch to handlerMessage
+    
+    AsyncTask：启动 new Xxx().execute();
+        doInBackground()   --- 耗时任务
+        onProgressUpdate() --- UI操作
+        onPostExecute()    --- 任务收尾工作
+```
+
+```
+    Service
+        public class MyService extends Service{
+        	public MyService(){ 
+        
+        	}
+        
+        	@Override
+        	public void onCreate(){ 
+        		super.onCreate();
+        	}
+        
+        	@Override
+        	public int onStartCommand(Intent intent, int flags, int startId){ 
+        		return super.onStartCommand(intent, flags, startId);
+        	}
+        
+        	@Override
+        	public void onDestory(){ 
+        		super.onDestory();
+        	}
+        
+        	@Override
+        	public IBinder onBind(Intent intent){ 
+        		// ...
+        	}
+        }
+        
+        Intent startIntent = new Intent(this, MyService.class);  // this is some activity
+        startService(startIntent);
+        
+        Intent stopIntent = new Intent(this, MyService.class);
+        stopService(stopIntent);
 ```
