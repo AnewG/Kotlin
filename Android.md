@@ -157,3 +157,10 @@
         Intent stopIntent = new Intent(this, MyService.class);
         stopService(stopIntent);
 ```
+
+```
+    Theme:
+    
+```
+
+![ThemeColors](https://developer.android.com/training/material/images/ThemeColors.png)
