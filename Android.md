@@ -211,3 +211,9 @@ new Thread(() -> {
 	// logic
 }).start()
 ```
+
+```
+    Release:
+        1.生成keystore
+	2.生成APK
+```
