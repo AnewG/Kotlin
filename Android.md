@@ -164,3 +164,23 @@
 ```
 
 ![ThemeColors](https://developer.android.com/training/material/images/ThemeColors.png)
+
+```
+Global:
+
+public class MyApplication extends Application{
+	
+	private static Context context;
+
+	@Override
+	public void onCreate(){ 
+		context = getApplicationContext();
+	}
+
+	public static Context getContext(){
+		return context;
+	}
+}
+
+MyApplication 需要注册为默认 application 类
+```
