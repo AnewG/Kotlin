@@ -184,3 +184,15 @@ public class MyApplication extends Application{
 
 MyApplication 需要注册为默认 application 类
 ```
+
+```
+    Debug:
+        断点
+	Attach debugger to Android process 随时发起调试
+```
+
+```
+    定时任务：
+        Timer
+	Alarm
+```
