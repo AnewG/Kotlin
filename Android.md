@@ -194,5 +194,20 @@ MyApplication 需要注册为默认 application 类
 ```
     定时任务：
         Timer
-	Alarm
+	Alarm：set/setExact/setAndAllowWhileIdle/setExactAnd...
+```
+
+```
+    Lambda: 需开启编译选项
+        old:
+new Thread(new Runnable(){
+	@Override
+	public void run(){ 
+		// logic
+	}
+}).start()
+	new:
+new Thread(() -> {
+	// logic
+}).start()
 ```
