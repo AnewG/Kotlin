@@ -17,7 +17,7 @@
         Layout mode:
 	  LinearLayout:  水平或垂直线性
 	  RelativeLayout
-	  FrameLayout
+	  FrameLayout:   所有放在布局里的控件，都按照层次堆叠在屏幕的左上角。后加进来的控件覆盖前面的控件。
 	  PercentXX
     Widget: 控件 (逻辑+视图组合)
         DrawerLayout 侧滑菜单
