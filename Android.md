@@ -15,8 +15,8 @@
 ```
     Layout: 布局（V视图）
         Layout mode:
-	  LinearLayout
-	  RelativeLayout
+	  LinearLayout:  水平或垂直线性
+	  RelativeLayout
 	  FrameLayout
 	  PercentXX
     Widget: 控件 (逻辑+视图组合)
