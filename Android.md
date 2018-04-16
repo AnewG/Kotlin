@@ -21,6 +21,9 @@
 	  PercentXX
     Widget: 控件 (逻辑+视图组合)
         DrawerLayout 侧滑菜单
+	CoordinatorLayout
+	    是用来协调其子view并以触摸影响布局的形式产生动画效果的一个super-powered FrameLayout
+            其典型的子View包括：FloatingActionButton，SnackBar。CoordinatorLayout是一个顶级父View。
         ViewGroup 包含 View
 	ListView, RecyclerView[横向和瀑布流布局], Webview
     Attr, Style, Theme
