@@ -20,6 +20,7 @@
 	  FrameLayout
 	  PercentXX
     Widget: 控件 (逻辑+视图组合)
+        DrawerLayout 侧滑菜单
         ViewGroup 包含 View
 	ListView, RecyclerView[横向和瀑布流布局], Webview
     Attr, Style, Theme
