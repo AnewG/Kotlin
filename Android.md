@@ -22,6 +22,10 @@
     Widget: 控件 (逻辑+视图组合)
         ViewGroup 包含 View
 	ListView, RecyclerView[横向和瀑布流布局], Webview
+    Attr, Style, Theme
+        values/attrs.xml <declare-styleable> 自定义属性 / layout_width 内置属性
+	style 由部分 attr 值构成, obtainStyledAttributes 获取当前 style 下相应的属性值, 一个 view 使用一个 style
+	theme 也使用 <style> 标签, 定义在系统级, 属下 view 都能使用
 ```
 
 ```
