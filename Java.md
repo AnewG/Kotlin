@@ -6,6 +6,10 @@
 
 Unicode转义序列会在解析代码之前得到处理。例如，"\u0022+\u0022"并不是一个由引号（U+0022）包围加号构成的字符串。实际上，\u0022会在解析之前转换为"，这会得到""+""，也就是一个空串。
 
+要想对文件进行读取，就需要一个用File对象构造一个Scanner对象，如下所示：
+Scanner in = new Scanner(Paths.get("myfile.txt"), "UTF-8");
+如果文件名中包含反斜杠符号，就要记住在每个反斜杠之前再加一个额外的反斜杠：“c：\\mydirectory\\myfile.txt”。
+
 ```
 
 ## Structure of a java class
