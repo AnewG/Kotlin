@@ -12,6 +12,8 @@ Unicode转义序列会在解析代码之前得到处理。例如，"\u0022+\u002
 Scanner in = new Scanner(Paths.get("myfile.txt"), "UTF-8");
 如果文件名中包含反斜杠符号，就要记住在每个反斜杠之前再加一个额外的反斜杠：“c：\\mydirectory\\myfile.txt”。
 
+不能在嵌套的两个块中声明同名的变量
+
 ```
 
 ## Structure of a java class
