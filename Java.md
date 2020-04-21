@@ -14,6 +14,8 @@ Scanner in = new Scanner(Paths.get("myfile.txt"), "UTF-8");
 
 不能在嵌套的两个块中声明同名的变量
 
+一旦创建了数组，就不能再改变它的大小（尽管可以改变每一个数组元素）。如果经常需要在运行过程中扩展数组的大小，就应该使用另一种数据结构——数组列表（arraylist）
+
 ```
 
 ## Structure of a java class
