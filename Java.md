@@ -2,7 +2,29 @@
 
 ```
 
-test
+[1]Java程序设计语言 [2]各种平台上的Java虚拟机(JVM) [3]JavaAPI类库 [4]一系列辅助工具
+
+1+2+3+4 = JDK（Java Development Kit）：即Java程序开发包，是支撑Java程序开发的最小环境。
+2+3 = JRE（Java Runtime Environment）：即Java运行时环境，是支撑Java程序运行的最小环境。
+
+-------------
+
+Java SE（Java Platform，Standard Edition）
+其以前被称为J2SE。标准版主要用来开发传统C/S架构的软件。通俗地讲，即开发桌面应用程序。
+
+Java EE（Java Platform，Enterprise Edition）
+其以前被称为J2EE。企业版是开发和部署可移植、健壮、可伸缩、安全的服务端Java应用，典型的就是企业Web服务。
+
+早期SSH (Struts+Spring+Hibernate，已过时)
+现今SSM (Spring+SpringMVC+MyBatis) MyBatis是DB层,避免了几乎所有JDBC代码和手动设置参数等,简化CRUD流程
+更加先进的 Spring Boot[Spring脚手架], Spring Cloud
+
+Java ME（Java Platform，Micro Edition）
+微型版是为在移动、嵌入式设备上运行的Java应用提供的平台环境。
+
+项目管理：https://gradle.org/maven-vs-gradle/
+
+-------------
 
 'A'是编码值为65所对应的字符常量。它与"A"不同，"A"是包含一个字符A的字符串。
 
