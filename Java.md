@@ -38,6 +38,26 @@ Scanner in = new Scanner(Paths.get("myfile.txt"), "UTF-8");
 
 一旦创建了数组，就不能再改变它的大小（尽管可以改变每一个数组元素）。如果经常需要在运行过程中扩展数组的大小，就应该使用另一种数据结构——数组列表（arraylist）
 
+方法可以访问所调用对象的私有数据。一个方法可以访问所属类的所有对象的私有数据。访问控制是基于类而不是基于对象
+
+总是采用按值调用。也就是说，方法得到的是所有参数值的一个拷贝。对象引用也属于复制
+
+可以调用方法对域进行初始化
+class A{
+	private static int nextId;
+	private int id = assignId();
+	private static int assignId(){
+		int r = nextId;
+		nextId++;
+		return r;
+	}
+}
+
+调用另一个构造器
+public A(double s){
+	this(nextId, s); // A(String, double)构造器
+}
+
 ```
 
 ## Structure of a java class
