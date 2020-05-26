@@ -58,6 +58,14 @@ public A(double s){
 	this(nextId, s); // A(String, double)构造器
 }
 
+设置类路径相当于额外指定类文件搜索基准目录，类似于php的set_include_path
+
+Java不支持多继承。Java中多继承功能的实现方式为接口
+
+返回类型不是签名的一部分，因此，在覆盖父类方法时，一定要保证返回类型的兼容性。允许子类将覆盖方法的返回类型定义为原返回类型的子类型
+
+在覆盖一个方法的时候，子类方法不能低于超类方法的可见性。特别是，如果超类方法是public，子类方法一定要声明为public
+
 ```
 
 ## Structure of a java class
