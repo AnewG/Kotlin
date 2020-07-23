@@ -94,6 +94,8 @@ Link类位于LinkedList类的私有部分，因此，Link对其他的代码均�
 
 异常层次结构：Throwable --> [Error + Exception]--> IOException, RuntimeException... 
 
+断言机制允许在测试期间向代码中插入一些检查语句。当代码发布时，这些插入的检测语句将会被自动地移走
+
 ```
 
 
