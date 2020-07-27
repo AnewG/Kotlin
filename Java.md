@@ -96,6 +96,16 @@ Link类位于LinkedList类的私有部分，因此，Link对其他的代码均�
 
 断言机制允许在测试期间向代码中插入一些检查语句。当代码发布时，这些插入的检测语句将会被自动地移走
 
+除了泛型类，还有泛型方法
+class X{
+  public static <T> T xxx(T... a){
+    return; // 第二个T是返回值类型
+  } 
+}
+对类型作出限定(bound)
+public static <T extends ....接口> ...
+public static <T extends ....接口 & ...接口2> ...
+
 ```
 
 
