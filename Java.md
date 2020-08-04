@@ -96,17 +96,11 @@ Link类位于LinkedList类的私有部分，因此，Link对其他的代码均�
 
 断言机制允许在测试期间向代码中插入一些检查语句。当代码发布时，这些插入的检测语句将会被自动地移走
 
-除了泛型类，还有泛型方法
-class X{
-  public static <T> T xxx(T... a){
-    return; // 第二个T是返回值类型
-  } 
-}
+---------------
+
 对类型作出限定(bound)
 public static <T extends ....接口> ...
 public static <T extends ....接口 & ...接口2> ...
-
----------------
 
 比如，Base 是 Sub 的父类，它们之间是继承关系，所以 Sub 的实例可以给一个 Base 引用赋值，但是
 
@@ -132,6 +126,22 @@ List<Base> lbase = lsub;
 
 所以可以利用反射调用方法来绕过编译器限制
 
+在应用泛型类的时候，如果返回值也是泛型，那么返回的将是Object
+但是很显然，我们在使用泛型的过程中，并没有要显示的进行类型转换，比如我们不需要这样 String a=(String) super.method("hahaha")
+而是直接 String a= super.method("hahaha"); 就可以了。为什么呢？
+
+是因为，为了返回实现类型的自动匹配，java编译器会在“类型擦除”的基础上在进行“转换插入”操作。
+每当使用泛型的返回值时，编译器会制动插入类型转换，所以原始代码是 String a= super.method("hahaha"); 
+编译之后，虚拟机看到的却是 String a= (String)super.method("hahaha"); 类型转换被“插入”了。
+
+因为类型擦除后，原有的泛型方法的泛型参数都被替换成了Object，因此无法实现方法覆盖，但实际应用中，肯定需要实现方法覆盖从而达到多态的目的。
+为了实现对method方法的覆盖，编译器在进行编译时，自动插入了一个桥接方法
+public Object mehoed(Object arv){
+    return method((String) arv);
+}
+桥接方法的方法签名和返回值和父类的泛型方法 public Object mehoed(Object arv) 一致，因此可以覆盖父类的method方法，实现了多态。
+通过桥接方法，还实现了对用户定义的method方法的调用，在程序员看来，就好像 public String mehoed(String arv) 成功覆盖了 public Object mehoed(Object arv) 一样。
+
 ---------------
 
 泛型类或者泛型方法中，不接受 8 种基本数据类型。
@@ -144,6 +154,75 @@ List<boolean> li = new ArrayList<>();
 
 List<Integer> li = new ArrayList<>();
 List<Boolean> li1 = new ArrayList<>();
+
+---------------
+
+泛型的限制：
+
+正因为java是以这种比较奇怪的方式实现了泛型，因此一切new T（..）或者new T[]其实都会是new Object，没有任何意义，所以java干脆在编译阶段就禁止了这种语法
+也就是说，泛型只能传入，不能产生。
+
+上面说泛型在编译阶段就被“擦除”了，其实也不完全对，利用反射，仍然可以获取泛型信息，比如泛型参数、泛型限制、通配符信息等都可以获取到
+说明在java的字节码（即.class文件）中，泛型信息仍然存在。
+因此，更准确的说，是泛型经过类加载器加载到虚拟机之后，泛型比擦除了，但是泛型的信息仍然存在字节码中，并且可以通过反射获取到。
+
+
+1.模糊性错误
+
+声明了两个泛型类参数。在类中根据不同的类型参数重载show方法。
+
+public class User<K, V> {
+    public void show(K k) {} // error：'show(K)' clashes with 'show(V)'; both methods have same erasure
+    public void show(V t) {}
+}
+
+复制代码由于泛型擦除，二者本质上都是Obejct类型。
+
+换一个方式即可：
+
+public class User<K, V> {
+    public void show(String k) {} // show(String)
+    public void show(V t) {}  // show(Object)
+}
+
+2.不能实例化类型参数
+
+编译器也不知道该创建那种类型的对象
+
+public class User<K, V> {
+    private K key = new K(); // 报错：Type parameter 'K' cannot be instantiated directly
+}
+
+3.对静态成员的限制
+
+静态方法无法访问类上定义的泛型
+如果静态方法操作的类型不确定，必须要将泛型定义在方法上。
+如果静态方法要使用泛型的话，必须将静态方法定义成泛型方法。
+
+public class User<T> {
+    private static T t; //错误
+    public static T getT() {} //错误
+    public static <K> void test(K k) {} //正确
+}
+
+4.对泛型数组的限制
+
+不能实例化元素类型为类型参数的数组，但是可以将数组指向类型兼容的数组的引用
+
+public class User<T> {
+
+    private T[] values;
+
+    public User(T[] values) {
+        this.values = new T[5]; //错误，不能实例化元素类型为类型参数的数组
+        this.values = values; //正确，可以将values 指向类型兼容的数组的引用
+    }
+}
+
+5.对泛型异常的限制
+
+泛型类不能扩展 Throwable，意味着不能创建泛型异常类
+https://stackoverflow.com/questions/501277/why-doesnt-java-allow-generic-subclasses-of-throwable
 
 ```
 
