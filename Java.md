@@ -224,6 +224,23 @@ public class User<T> {
 泛型类不能扩展 Throwable，意味着不能创建泛型异常类
 https://stackoverflow.com/questions/501277/why-doesnt-java-allow-generic-subclasses-of-throwable
 
+---------------
+
+Apache HTTP Server和Nginx本身不支持生成动态页面，但它们可以通过其他模块来支持（例如通过Shell、PHP、Python脚本程序来动态生成内容）
+如果想要使用Java程序来动态生成资源内容，使用这一类HTTP服务器很难做到。虽然nginx也可以通过模块开发来提供对应功能
+
+Java Servlet技术以及衍生的技术可以让Java程序也具有处理HTTP请求并且返回内容（由程序动态控制）的能力
+Tomcat正是支持运行Servlet/JSP应用程序的容器（Container），对应同级别的有jboss,jetty等
+Tomcat运行在JVM之上，它和HTTP服务器一样，绑定IP地址并监听TCP端口，同时还包含以下指责：
+1.管理Servlet程序的生命周期
+2.将URL映射到指定的Servlet进行处理
+3.与Servlet程序合作处理HTTP请求
+
+虽然Tomcat也可以认为是HTTP服务器单独提供服务（通常用在内网和不需要流控等小型服务的场景），但通常它仍然会和Nginx配合在一起使用
+
+1.动静态资源分离——运用Nginx的反向代理功能分发请求：所有动态资源的请求交给Tomcat，而静态资源的请求（例如图片、视频、CSS、JavaScript文件等）则直接由Nginx返回到浏览器，这样能大大减轻Tomcat的压力。
+2.负载均衡，当业务压力增大时，可能一个Tomcat的实例不足以处理，那么这时可以启动多个Tomcat实例进行水平扩展，而Nginx的负载均衡功能可以把请求通过算法分发到各个不同的实例进行处理
+
 ```
 
 
