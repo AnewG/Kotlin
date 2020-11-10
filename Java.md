@@ -124,6 +124,26 @@ List<Base> lbase = lsub;
 若类型变量有多个限定，那么原始类型就用第一个边界的类型变量来替换。而编译器在必要的时要向第一个边界类型插入强制类型转换。
 为了提高效率，应该将标签（tagging）接口（即没有方法的接口）放在边界限定列表的末尾。
 
+Plate<? extends Fruit> = 一个能放水果以及一切是水果派生类的盘子(啥水果都能放的盘子)
+Plate<? super Fruit> = 一个能放水果以及一切是水果的基类的盘子
+
+Plate<? extends Fruit> p = new Plate<Apple>(new Apple());
+//不能存入任何元素
+p.set(new Fruit());
+p.set(new Apple());
+//读取出来的只能放在Fruit或它的基类里
+Fruit newFruit1 = p.get();
+Object newFruit2 = p.get();
+Apple Fruit3 = p.get(); // error
+
+原因是编译器只知道容器内是Fruit或者它的派生类，但具体是什么类型不知道
+可能是Fruit？可能是Apple？也可能是Banana，RedApple，GreenApple。而实标上一个占位符：CAP#1
+然后无论是想往里插入Apple或者Meat或者Fruit编译器都不知道能不能和这个CAP#1匹配，所以就都不允许。
+
+super的规则反之
+
+---------------
+
 所以可以利用反射调用方法来绕过编译器限制
 
 在应用泛型类的时候，如果返回值也是泛型，那么返回的将是Object
