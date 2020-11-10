@@ -109,4 +109,8 @@ public class Person {
 //Builder内部静态类是Person的静态成员(static), new Person.Builder返回Builder类的对象，所以this正常使用，最后通过build方法重新取值生成一个Person对象
 Person person = new Person.Builder("A", 16, "male").education("bachelor").people("han").nationality("China").build();
 
+Builder模式的确有它自身的不足，为了创建对象，必须先创建它的构建器。在某些十分注重性能的情况下创建构造器的开销可能是个问题。Builder模式还比重叠构造器模式还要冗长，因此它旨在有很多参数的时候才使用。
+
+简而言之，如果类的构造器或者静态工厂中具有多个参数，设计这种类时，Builder模式就是一种不错的选择，特别是当大多数参数都是可选或者类型相同的时候。与使用重叠构造器相比，使用Builder模式的代码将更易于阅读与编写，构建器也比JavaBean更加安全。
+
 ```
